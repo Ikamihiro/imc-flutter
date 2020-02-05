@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Header(),
           FormInput(),
-          CalcularButton(),
         ],
       ),
     );

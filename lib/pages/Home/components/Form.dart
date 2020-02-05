@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './CalcularButton.dart';
 import './Widgets.dart';
 
 class FormInput extends StatefulWidget {
@@ -16,43 +17,58 @@ class _FormInputState extends State<FormInput> {
     return Container(
       color: Colors.transparent,
       margin: MediaQuery.of(context).padding,
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                child: Column(
-                  children: <Widget>[
-                    textLabel("Altura (m)"),
-                    Padding(padding: EdgeInsets.all(7),),
-                    inputText(_controllerAltura),
-                  ],
+      child: Column(
+        children: <Widget>[
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Column(
+                      children: <Widget>[
+                        textLabel("Altura (m)"),
+                        Padding(padding: EdgeInsets.all(7),),
+                        inputText(_controllerAltura),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: refreshButton((){
-                _controllerAltura.clear();
-                _controllerPeso.clear();
-              }),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: Column(
-                  children: <Widget>[
-                    textLabel("Altura (m)"),
-                    Padding(padding: EdgeInsets.all(7),),
-                    inputText(_controllerPeso),
-                  ],
+                Expanded(
+                  child: refreshButton((){
+                    _controllerAltura.clear();
+                    _controllerPeso.clear();
+                  }),
                 ),
-              ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 20.0),
+                    child: Column(
+                      children: <Widget>[
+                        textLabel("Altura (m)"),
+                        Padding(padding: EdgeInsets.all(7),),
+                        inputText(_controllerPeso),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          IntrinsicHeight(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: CalcularButton(calcular: () {
+                    print(_controllerAltura.text);
+                  },),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

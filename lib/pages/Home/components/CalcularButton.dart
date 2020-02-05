@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CalcularButton extends StatelessWidget {
-  double altura, peso;
-
-  CalcularButton({Key key, this.altura, this.peso}) : super(key: key);
+  final Function calcular;
+  CalcularButton({Key key, this.calcular});
 
   @override 
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class CalcularButton extends StatelessWidget {
             fontWeight: FontWeight.bold
           ),
         ),
-        onPressed: () {},
+        onPressed: calcular,
         color: Colors.white,
         textColor: Colors.blue,
         shape: RoundedRectangleBorder(
