@@ -14,7 +14,7 @@ class _ShowResultState extends State<ShowResult> {
 
   @override
   void initState() {
-    if (widget.resultado == '0.0') {
+    if (widget.resultado == '0.0' || widget.resultado == '0') {
       _resultado = 'Tente novamente';
     } else {
       _resultado = widget.resultado;

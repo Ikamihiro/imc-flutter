@@ -19,8 +19,6 @@ class _ResultPageState extends State<ResultPage> {
 
   void calcularImc() {
     if (widget.alturaData.isNotEmpty && widget.pesoData.isNotEmpty) {
-      print(widget.alturaData);
-      print(widget.pesoData);
       _altura = double.parse(widget.alturaData);
       _peso = double.parse(widget.pesoData);
       _resultado = _peso / (_altura * _altura);
