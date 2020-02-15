@@ -1,9 +1,9 @@
+import 'package:IMC/pages/Result/ResultPage.dart';
 import 'package:flutter/material.dart';
 import './CalcularButton.dart';
 import './Widgets.dart';
 
 class FormInput extends StatefulWidget {
-
   @override
   _FormInputState createState() => _FormInputState();
 }
@@ -30,14 +30,16 @@ class _FormInputState extends State<FormInput> {
                     child: Column(
                       children: <Widget>[
                         textLabel("Altura (m)"),
-                        Padding(padding: EdgeInsets.all(7),),
+                        Padding(
+                          padding: EdgeInsets.all(7),
+                        ),
                         inputText(_controllerAltura),
                       ],
                     ),
                   ),
                 ),
                 Expanded(
-                  child: refreshButton((){
+                  child: refreshButton(() {
                     _controllerAltura.clear();
                     _controllerPeso.clear();
                   }),
@@ -48,7 +50,9 @@ class _FormInputState extends State<FormInput> {
                     child: Column(
                       children: <Widget>[
                         textLabel("Altura (m)"),
-                        Padding(padding: EdgeInsets.all(7),),
+                        Padding(
+                          padding: EdgeInsets.all(7),
+                        ),
                         inputText(_controllerPeso),
                       ],
                     ),
@@ -61,9 +65,14 @@ class _FormInputState extends State<FormInput> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: CalcularButton(calcular: () {
-                    print(_controllerAltura.text);
-                  },),
+                  child: CalcularButton(
+                    calcular: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResultPage()));
+                    },
+                  ),
                 ),
               ],
             ),

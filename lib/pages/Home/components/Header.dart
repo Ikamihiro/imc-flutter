@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
+  final String title;
+  final String subtitle;
+
+  Header({Key key, this.title, this.subtitle}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,20 +19,18 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Calculadora IMC',
+                title,
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 35
-                ),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 35),
               ),
               Text(
-                'Descubra qual é o seu índice de Massa Corporal',
+                subtitle,
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 15
-                ),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 15),
               ),
             ],
           ),
