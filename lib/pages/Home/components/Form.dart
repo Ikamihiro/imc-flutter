@@ -49,7 +49,7 @@ class _FormInputState extends State<FormInput> {
                     padding: EdgeInsets.only(right: 20.0),
                     child: Column(
                       children: <Widget>[
-                        textLabel("Altura (m)"),
+                        textLabel("Peso (kg)"),
                         Padding(
                           padding: EdgeInsets.all(7),
                         ),
@@ -70,7 +70,10 @@ class _FormInputState extends State<FormInput> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ResultPage()));
+                              builder: (context) => ResultPage(
+                                    alturaData: _controllerAltura.text,
+                                    pesoData: _controllerPeso.text,
+                                  )));
                     },
                   ),
                 ),
