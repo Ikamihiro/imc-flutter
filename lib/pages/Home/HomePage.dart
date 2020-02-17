@@ -15,7 +15,10 @@ class _HomePageState extends State<HomePage> {
       color: Colors.blue,
       child: ListView(
         children: <Widget>[
-          Header(),
+          Header(
+            title: 'Calculadora IMC',
+            subtitle: 'Descubra qual é o seu índice de Massa Corporal',
+          ),
           FormInput(),
         ],
       ),

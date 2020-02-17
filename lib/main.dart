@@ -7,7 +7,7 @@ class Imc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calculadora IMC',
+      title: 'IMC',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
